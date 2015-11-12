@@ -67,7 +67,7 @@
 			</LinearGradientBrush>
 		</TextBlock.Foreground>
 	</TextBlock>
-	<TextBlock Margin="64,0,0,30" VerticalAlignment="Bottom" Text="© 2009 DAN, All rights reserved." TextWrapping="Wrap" FontFamily="Arial" Foreground="#FFE5E9F2"/>
+	<TextBlock Margin="64,0,0,30" VerticalAlignment="Bottom" Text="© 2015 Chandrakanth, All rights reserved." TextWrapping="Wrap" FontFamily="Arial" Foreground="#FFE5E9F2"/>
 	<TextBlock Margin="94,122,217,108" Text="Version 1.0" TextWrapping="Wrap" FontSize="30" FontFamily="Tahoma">
 		<TextBlock.Foreground>
 			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
