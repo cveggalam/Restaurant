@@ -138,10 +138,12 @@ namespace Restaurant
             {
                 DataSet ds = objSqlDatabase.ExecuteDataSet(CommandType.StoredProcedure, spName);
                 List<GroupClass> groupList = new List<GroupClass>();
+                groupList.Add(new GroupClass(0, "ALL"));
                 for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
                 {
                     groupList.Add(new GroupClass(Convert.ToInt32(ds.Tables[0].Rows[i]["GroupID"]), ds.Tables[0].Rows[i]["GroupName"].ToString()));
                 }
+
                 ds = null;
                 cmbGroups.ItemsSource = groupList;
                 cmbGroups.DisplayMemberPath = "GroupName";
@@ -307,8 +309,15 @@ namespace Restaurant
         {
             if (doFilter)
             {
+
                 int selectedGroupID = Convert.ToInt32(cmbGroups.SelectedValue);
-                productDataView.RowFilter = "GroupID=" + selectedGroupID + "";
+                if (selectedGroupID > 0)
+                    productDataView.RowFilter = "GroupID=" + selectedGroupID + "";
+                else
+                {
+                   
+                    LoadProducts();
+                }
             }
         }
 
@@ -909,7 +918,7 @@ namespace Restaurant
             }
         }
 
-       
+
     }
 
 }
