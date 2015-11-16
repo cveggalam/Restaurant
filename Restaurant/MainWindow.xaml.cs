@@ -299,7 +299,7 @@ namespace Restaurant
 
         private void Dan_Clicked(object sender, MouseButtonEventArgs e)
         {
-            Process.Start("www.daneshmandi.com");
+           // Process.Start("www.daneshmandi.com");
         }
 
         private void SellReportMenuItem_Click(object sender, RoutedEventArgs e)

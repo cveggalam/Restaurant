@@ -317,15 +317,15 @@ namespace Restaurant
             this.Cursor = Cursors.Wait;
             if (currentTotalPrice != 0 & OrderGridView.Items.Count > 0)
             {
-                if (currentOrderState != 4)
-                {
-                    MessageBoxResult msgResult = MessageBox.Show(string.Format(ErrorMessages.Default.OrderNotServedYet, currentOrderNo.ToString()), "", MessageBoxButton.YesNo, MessageBoxImage.Warning, MessageBoxResult.No);
-                    if (msgResult == MessageBoxResult.No)
-                    {
-                        this.Cursor = Cursors.Arrow;
-                        return;
-                    }
-                }
+                //if (currentOrderState != 4)
+                //{
+                //    MessageBoxResult msgResult = MessageBox.Show(string.Format(ErrorMessages.Default.OrderNotServedYet, currentOrderNo.ToString()), "", MessageBoxButton.YesNo, MessageBoxImage.Warning, MessageBoxResult.No);
+                //    if (msgResult == MessageBoxResult.No)
+                //    {
+                //        this.Cursor = Cursors.Arrow;
+                //        return;
+                //    }
+                //}
                 if (string.IsNullOrEmpty(txbCustomerName.Text))
                 {
                     MessageBoxResult msgRes = MessageBox.Show(ErrorMessages.Default.CustomerNameNotEntered, "", MessageBoxButton.YesNo, MessageBoxImage.Warning, MessageBoxResult.No);
