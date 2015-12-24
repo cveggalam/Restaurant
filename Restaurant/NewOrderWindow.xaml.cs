@@ -18,6 +18,8 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Data.Common;
 using Restaurant.Classes;
+using Microsoft.Windows.Controls;
+using System.Text.RegularExpressions;
 
 namespace Restaurant
 {
@@ -168,6 +170,32 @@ namespace Restaurant
             catch (SqlException)
             { }
         }
+        //This method populate the Product Grid with available products by ProductCode
+        private void LoadProductsByProductCode()
+        {
+            string spName = "Get_Product_By_ProductCode";
+            object[] spParams = new object[1];
+            spParams[0] = txtItem.Text;
+            //try
+            //{
+            if (txtItem.Text.Count() > 0)
+            {
+                DataSet ds = objSqlDatabase.ExecuteDataSet(spName, spParams);
+                productDataTable = ds.Tables[0];
+                productDataView = productDataTable.DefaultView;
+                ProductsGridView.ItemsSource = productDataView;
+                ProductsGridView.SelectedIndex = 0;
+            }
+            else
+            {
+                MessageBox.Show("Please enter Item Code");
+            }
+            //}
+            //catch (SqlException)
+            //{
+
+            //}
+        }
 
         //This method load Restaurant Tables into tables combobox
         private void LoadTables()
@@ -315,7 +343,7 @@ namespace Restaurant
                     productDataView.RowFilter = "GroupID=" + selectedGroupID + "";
                 else
                 {
-                   
+
                     LoadProducts();
                 }
             }
@@ -388,10 +416,12 @@ namespace Restaurant
 
         private void btnAddToOrder_Click(object sender, RoutedEventArgs e)
         {
+
             if (ProductsGridView.SelectedItems.Count > 0)
             {
                 DataRowView drv = (DataRowView)ProductsGridView.SelectedItem;
                 AddToOrder(drv);
+                ProductsGridView.ItemsSource = null;
             }
             else
             {
@@ -827,6 +857,7 @@ namespace Restaurant
                         catch
                         {
                             MessageBox.Show(ErrorMessages.Default.UnhandledException, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                            //MessageBox.Show("Please cancel the order");
                         }
                     }
                     else
@@ -917,6 +948,24 @@ namespace Restaurant
                 UnlockOrder(Convert.ToInt64(txbOrderNo.Text), GlobalClass._UserID);
             }
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtItem.Text))
+            {
+                LoadProductsByProductCode();
+            }
+            else
+            {
+                ProductsGridView.ItemsSource = null;
+
+
+            }
+
+        }
+
+
+
 
 
     }

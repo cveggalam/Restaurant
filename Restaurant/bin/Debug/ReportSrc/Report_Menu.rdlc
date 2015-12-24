@@ -377,7 +377,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                       <CanGrow>true</CanGrow>
-                      <Value>Price ($)</Value>
+                      <Value>Price (.Rs)</Value>
                     </Textbox>
                   </ReportItems>
                 </TableCell>

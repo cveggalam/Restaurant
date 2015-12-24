@@ -17,7 +17,7 @@ namespace Restaurant.Classes
             {
                 temp=temp.Split('.')[0];
             }
-            return temp + " $";
+            return temp + " .Rs";
         }
         public object ConvertBack(object value, Type targetType, object parameter,
         CultureInfo culture)

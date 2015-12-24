@@ -159,6 +159,7 @@ namespace Restaurant
             cmbGroup.SelectedIndex = -1;
             cmbUnit.SelectedIndex = -1;
             txtPrice.Text = "0.00";
+            txtProductCode.Text = "";
             ProductsGridView.IsEnabled = true;
         }
 
@@ -173,6 +174,7 @@ namespace Restaurant
                 txtPrice.Text = ((DataRowView)ProductsGridView.SelectedItem)["Price"].ToString();
                 cmbUnit.SelectedItem= ((DataRowView)ProductsGridView.SelectedItem)["UnitName"].ToString();
                 cmbGroup.SelectedValue =Convert.ToInt32(((DataRowView)ProductsGridView.SelectedItem)["GroupID"]);
+                txtProductCode.Text = ((DataRowView)ProductsGridView.SelectedItem)["ProductCode"].ToString();
                 BorderAddEdit.IsEnabled = true;
             }
             else
@@ -242,16 +244,22 @@ namespace Restaurant
                     errorText += string.Format(ErrorMessages.Default.FieldEmpty, "Unit") + "\n";
                     state = true;
                 }
+                if (string.IsNullOrEmpty(txtProductCode.Text))
+                {
+                    errorText += string.Format(ErrorMessages.Default.FieldEmpty, "Product Code") + "\n";
+                    state = true;
+                }
                 if (state == false)
                 {
                     if (objDatabaseClass.CheckConnection())
                     {
                         string spName = "Create_Product";
-                        object[] spParams = new object[4];
+                        object[] spParams = new object[5];
                         spParams[0] = txtProductName.Text;
                         spParams[1] = Convert.ToInt32(cmbGroup.SelectedValue);
                         spParams[2] = cmbUnit.SelectedItem.ToString();
                         spParams[3] = Convert.ToDecimal(txtPrice.Text);
+                        spParams[4] = txtProductCode.Text;
                         try
                         {
                             int result = objSqlDatabase.ExecuteNonQuery(spName, spParams);
@@ -306,12 +314,13 @@ namespace Restaurant
                         if (_productID != -1)
                         {
                             string spName = "Update_Product";
-                            object[] spParams = new object[5];
+                            object[] spParams = new object[6];
                             spParams[0] = _productID;
                             spParams[1] = txtProductName.Text;
                             spParams[2] = Convert.ToInt32(cmbGroup.SelectedValue);
                             spParams[3] =cmbUnit.SelectedItem.ToString();
                             spParams[4] = Convert.ToDecimal(txtPrice.Text);
+                            spParams[5] = txtProductCode.Text;
                             try
                             {
                                 int result = objSqlDatabase.ExecuteNonQuery(spName, spParams);
@@ -360,6 +369,7 @@ namespace Restaurant
         {
             txbBorderTitle.Text = "";
             txtProductName.Text = "";
+            txtProductCode.Text = "";
             cmbGroup.SelectedIndex = -1;
             cmbUnit.SelectedIndex = -1;
             txtPrice.Text = "0.00";

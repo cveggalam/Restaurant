@@ -26,40 +26,49 @@
 
         <Grid Grid.Column="1" Grid.Row="0" Width="Auto" Height="Auto" Margin="0,0,0,0">
             <Border x:Name="BorderAddEdit" IsEnabled="False" Margin="8,20,8,4" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1,1,1,1" CornerRadius="5,5,5,5" Background="{x:Null}">
-                <Grid Width="Auto" Height="Auto" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="15" />
-                        <RowDefinition Height="30" />
-                        <RowDefinition Height="30" />
-                        <RowDefinition Height="30" />
-                        <RowDefinition Height="30" />
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="99*" />
-                        <ColumnDefinition Width="384.979*" />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="0" Grid.Row="0"  x:Name="txbBorderTitle" d:IsStaticText="True"  Foreground="#FFFFFFFF" Text="" TextAlignment="Left" Margin="5,2,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                    
-                    <TextBlock Grid.Column="0" Grid.Row="1" Margin="0,0,0,0" x:Name="txbProductName" Text="Product Name:" Foreground="#FFFFFFFF" Height="Auto" VerticalAlignment="Center" HorizontalAlignment="Right" />
-                                <TextBlock Grid.Column="0" Grid.Row="2"  Margin="0,0,0,0" x:Name="txbUnit" Text="Unit:" Foreground="#FFFFFFFF" Height="Auto" VerticalAlignment="Center" HorizontalAlignment="Right" />
-                                <TextBlock Grid.Column="0" Grid.Row="3" Margin="0,0,0,0" x:Name="txbGroup" Text="Group:" Foreground="#FFFFFFFF" Height="Auto" VerticalAlignment="Center" HorizontalAlignment="Right" />
-                                
-                                <TextBlock Grid.Row="4" Grid.Column="0" Margin="0,0,0,0" x:Name="txbPrice"  Text="Price:" Foreground="#FFFFFFFF" Height="Auto" VerticalAlignment="Center" HorizontalAlignment="Right" />
-                                <TextBox Grid.Column="1" Grid.Row="1" Margin="4,0,0,0" x:Name="txtProductName" Width="300" Height="Auto" VerticalAlignment="Center" HorizontalAlignment="Left" MaxLength="100" />
-                                
-                                <ComboBox Grid.Column="1" Grid.Row="2" Margin="4,0,0,0" x:Name="cmbUnit" Height="Auto" Width="300" VerticalAlignment="Center" HorizontalAlignment="Left" />
-                    
-                                <StackPanel Grid.Column="1" Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <Button Style="{DynamicResource BlueButtonStyle}" x:Name="btnSave" Foreground="White" FontSize="10" Content="Save" Height="26"  Width="72" Margin="0,0,10,0" Click="btnSave_Click" />
-                                <Button Style="{DynamicResource BlueButtonStyle}" x:Name="btnCancel" Foreground="White" FontSize="10" Content="Cancel" Height="26"   Width="72" Click="btnCancel_Click" />
+                <UniformGrid Margin="0,0,0,-32.343">
+                    <Grid Width="Auto" Height="164.507" HorizontalAlignment="Stretch" VerticalAlignment="Top" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="15" />
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="30" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="105*" />
+                            <ColumnDefinition Width="94*" />
+                            <ColumnDefinition Width="97*"/>
+                            <ColumnDefinition Width="216*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Grid.Row="0"  x:Name="txbBorderTitle" d:IsStaticText="True"  Foreground="#FFFFFFFF" Text="" TextAlignment="Left" Margin="5,2,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.RowSpan="2" />
+
+                        <TextBlock Grid.Column="0" Grid.Row="1" Margin="0,8.4,-0.001,8.4" x:Name="txbProductName" Text="Product Name:" Foreground="#FFFFFFFF" Height="Auto" VerticalAlignment="Center" HorizontalAlignment="Right" />
+                        <TextBlock Grid.Column="0" Grid.Row="2"  Margin="0,8.4,-0.001,8.4" x:Name="txbUnit" Text="Unit:" Foreground="#FFFFFFFF" Height="Auto" VerticalAlignment="Center" HorizontalAlignment="Right" />
+                        <TextBlock Grid.Column="0" Grid.Row="3" Margin="0,8.4,-0.001,8.4" x:Name="txbGroup" Text="Group:" Foreground="#FFFFFFFF" Height="Auto" VerticalAlignment="Center" HorizontalAlignment="Right" />
+
+                        <TextBlock Grid.Row="4" Grid.Column="0" Margin="0,8.4,-0.001,8.4" x:Name="txbPrice"  Text="Price:" Foreground="#FFFFFFFF" Height="Auto" VerticalAlignment="Center" HorizontalAlignment="Right" />
+
+                        <TextBlock Grid.Column="0" Grid.Row="5" Margin="0,8.4,-0.001,8.4" x:Name="txbProductCode" Text="Product Code:" Foreground="#FFFFFFFF" Height="Auto" VerticalAlignment="Center" HorizontalAlignment="Right" />
+                        <TextBox Grid.Column="1" Grid.Row="1" Margin="4,5.4,0,5.4" x:Name="txtProductName" Width="300" Height="Auto" VerticalAlignment="Center" HorizontalAlignment="Left" MaxLength="100" Grid.ColumnSpan="3" />
+
+                        <ComboBox Grid.Column="1" Grid.Row="2" Margin="4,5.4,0,5.4" x:Name="cmbUnit" Height="Auto" Width="300" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.ColumnSpan="3" />
+
+                        <StackPanel Grid.Column="2" Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="32.324,2,126.765,2">
+                            <Button Style="{DynamicResource BlueButtonStyle}" x:Name="btnSave" Foreground="White" FontSize="10" Content="Save" Height="26"  Width="72" Margin="0,0,10,0" Click="btnSave_Click" />
+                            <Button Style="{DynamicResource BlueButtonStyle}" x:Name="btnCancel" Foreground="White" FontSize="10" Content="Cancel" Height="26"   Width="72" Click="btnCancel_Click" />
                         </StackPanel>
-                                <TextBox TextChanged="txtPrice_TextChanged" Margin="4,0,0,0" x:Name="txtPrice" Height="Auto" d:LayoutOverrides="Height, GridBox" Grid.Row="4" Grid.Column="1" Width="300" HorizontalAlignment="Left" VerticalAlignment="Center" MaxLength="21" Text="0.00" />
-                                <ComboBox Margin="4,0,0,0" x:Name="cmbGroup" Height="Auto" d:LayoutOverrides="Height" HorizontalAlignment="Left" VerticalAlignment="Center" Width="300" Grid.Row="3" Grid.Column="1" /></Grid>
+                        <TextBox TextChanged="txtPrice_TextChanged" Margin="4,5.4,0,5.4" x:Name="txtPrice" Height="Auto" Grid.Row="4" Grid.Column="1" Width="300" HorizontalAlignment="Left" VerticalAlignment="Center" MaxLength="21" Text="0.00" Grid.ColumnSpan="3" />
+                        <TextBox Grid.Row="5" Margin="4.108,4.8,0,5.999" x:Name="txtProductCode" Width="92.954" Height="Auto" VerticalAlignment="Center" HorizontalAlignment="Left" MaxLength="100" Grid.Column="1" Grid.ColumnSpan="2" />
+                        <ComboBox Margin="4,5.4,0,5.4" x:Name="cmbGroup" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Center" Width="300" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" />
+                    </Grid>
+                </UniformGrid>
             </Border>
         </Grid>
 
-        <My:SortableListView Grid.Column="1" Grid.Row="1" x:Name="ProductsGridView" Height="Auto"  Margin="5,2,6,2" 
+        <My:SortableListView Grid.Column="1" Grid.Row="1" x:Name="ProductsGridView" Height="Auto"  Margin="5,0,6,2" 
                              Background="{x:Null}"  BorderBrush="{x:Null}"
             ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"
             VirtualizingStackPanel.IsVirtualizing="True" ScrollViewer.CanContentScroll="True"
@@ -69,11 +78,12 @@
             <My:SortableListView.View >
                 <GridView AllowsColumnReorder="False">
                     <GridViewColumn Width="4" HeaderContainerStyle="{DynamicResource FirstColumnGridViewColumnHeader}" CellTemplate="{StaticResource EmptyColumnTemplate}"/>
-                    <My:SortListViewColumn Header="Product ID" DisplayMemberBinding="{Binding Path=ProductID}" SortProperty="ProductID" Width="80" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}"/>
+                    <My:SortListViewColumn Header="Product ID" DisplayMemberBinding="{Binding Path=ProductID}" SortProperty="ProductID" Width="70" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}"/>
                     <My:SortListViewColumn Header="Product Name" DisplayMemberBinding="{Binding Path=ProductName}" SortProperty="ProductName" Width="150" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}"/>
-                    <My:SortListViewColumn Header="Unit" DisplayMemberBinding="{Binding Path=UnitName}" SortProperty="UnitName" Width="80" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}"/>
-                    <My:SortListViewColumn Header="Group" DisplayMemberBinding="{Binding Path=GroupName}" SortProperty="GroupName" Width="150" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}"/>
-                    <My:SortListViewColumn Header="Price" DisplayMemberBinding="{Binding Path=Price}" SortProperty="Price" Width="80" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}"/>
+                    <My:SortListViewColumn Header="Unit" DisplayMemberBinding="{Binding Path=UnitName}" SortProperty="UnitName" Width="70" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}"/>
+                    <My:SortListViewColumn Header="Group" DisplayMemberBinding="{Binding Path=GroupName}" SortProperty="GroupName" Width="90" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}"/>
+                    <My:SortListViewColumn Header="Price" DisplayMemberBinding="{Binding Path=Price}" SortProperty="Price" Width="65" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}"/>
+                    <My:SortListViewColumn Header="Product Code" DisplayMemberBinding="{Binding Path=ProductCode}" SortProperty="ProductCode" Width="80" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}"/>
                     <GridViewColumn Width="4" HeaderContainerStyle="{DynamicResource LastColumnGridViewColumnHeader}" CellTemplate="{StaticResource EmptyColumnTemplate}"/>
                 </GridView>
             </My:SortableListView.View>

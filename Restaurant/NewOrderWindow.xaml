@@ -1,11 +1,13 @@
-﻿<Window
+﻿<Window 
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	x:Class="Restaurant.NewOrderWindow"
     xmlns:myClasses="clr-namespace:Restaurant.Classes"
 	x:Name="Window"
 	Title="Window1"
-	Width="800" Height="600" MouseLeftButtonDown="Window_MouseLeftButtonDown" Background="{x:Null}" Foreground="#FFFFFFFF" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" 
+	Width="800" Height="600" 
+    MouseLeftButtonDown="Window_MouseLeftButtonDown"
+    Background="{x:Null}" Foreground="#FFFFFFFF" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" 
     xmlns:Restaurant="clr-namespace:Restaurant" 
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -157,30 +159,33 @@
                         <RowDefinition Height="35"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Border Grid.Row="0" Margin="5,5,5,0" CornerRadius="8,8,8,8" Background="{DynamicResource PanelGradientBrush}" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1,1,1,1">
-                        <Grid Width="Auto" Height="Auto">
-                            <TextBlock Grid.Row="0" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Center" Width="Auto" Height="Auto" Text="Product Group:" TextWrapping="Wrap"/>
-                            <ComboBox Grid.Row="0" IsSynchronizedWithCurrentItem="True" Margin="84,1,4,1" Height="Auto" FontSize="12" VerticalAlignment="Center" x:Name="cmbGroups" SelectionChanged="cmbGroups_SelectionChanged"  />
+                    <Border Grid.Row="0" Margin="5,5,5,345.96" CornerRadius="8,8,8,8" Background="{DynamicResource PanelGradientBrush}" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1,1,1,1" Grid.RowSpan="2">
+                        <Grid Width="Auto" Height="Auto" Margin="0,0,0,-30">
+                            <TextBlock Grid.Row="0" HorizontalAlignment="Left" Margin="5,4.02,0,64.02" VerticalAlignment="Center" Width="Auto" Height="Auto" Text="Product Group :" TextWrapping="Wrap"/>
+                            <ComboBox Grid.Row="0" IsSynchronizedWithCurrentItem="True" Margin="113,1.02,4,61.02" Height="Auto" FontSize="12" VerticalAlignment="Center" x:Name="cmbGroups" SelectionChanged="cmbGroups_SelectionChanged"  />
+                            <TextBlock Grid.Row="1" TextWrapping="Wrap" Text="Enter Item Code :" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Center" Width="Auto" Height="Auto"/>
+                            <TextBox TextWrapping="Wrap"  Margin="113,30.02,4,32.02" Height="Auto" FontSize="12" VerticalAlignment="Center" x:Name="txtItem" PreviewTextInput="txtAmount_PreviewTextInput"  TextChanged="TextBox_TextChanged"/>
                         </Grid>
                     </Border>
-                    <Restaurant:SortableListView  Grid.Row="1" x:Name="ProductsGridView" Margin="0,5,0,35" Height="Auto"
+                    <Restaurant:SortableListView  Grid.Row="1" x:Name="ProductsGridView" Margin="0,31,0,35" Height="Auto" 
 				Background="{x:Null}"  BorderBrush="{x:Null}"
 				ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"
 				VirtualizingStackPanel.IsVirtualizing="True" ScrollViewer.CanContentScroll="True"
 				SelectionMode="Single"  IsSynchronizedWithCurrentItem="True"
 				ItemContainerStyle="{DynamicResource RestaurantEditListViewItemStyle}"
-				Style="{DynamicResource RestaurantEditListViewStyle}" IsEnabled="True" PreviewMouseDown="ListViewItemDragBegin" PreviewMouseMove="ListViewItemDragMove" >
+				Style="{DynamicResource RestaurantEditListViewStyle}" IsEnabled="True" PreviewMouseDown="ListViewItemDragBegin" PreviewMouseMove="ListViewItemDragMove" SelectedIndex="1" >
                         <Restaurant:SortableListView.View >
                             <GridView AllowsColumnReorder="False">
                                 <GridViewColumn Width="4"  HeaderContainerStyle="{DynamicResource FirstColumnGridViewColumnHeader}" CellTemplate="{StaticResource EmptyColumnTemplate}"/>
                                 <Restaurant:SortListViewColumn Header="Product Code" CellTemplate="{StaticResource ProductCodeColumnTemplate}" SortProperty="ProductCode" Width="100" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
                                 <Restaurant:SortListViewColumn Header="Product Name" CellTemplate="{StaticResource ProductNameColumnTemplate}" SortProperty="ProductName" Width="200" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
                                 <GridViewColumn Width="4" HeaderContainerStyle="{DynamicResource LastColumnGridViewColumnHeader}" CellTemplate="{StaticResource EmptyColumnTemplate}"/>
-                                
+
                             </GridView>
                         </Restaurant:SortableListView.View>
                     </Restaurant:SortableListView>
-                    <Button Style="{DynamicResource BlueButtonStyle}" Content="Add to Order" Margin="0,0,0,5" Foreground="#FFFFFFFF" IsDefault="False" Grid.Row="1" Height="27" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Width="80" FontFamily="Arial" FontSize="10" x:Name="btnAddToOrder" Click="btnAddToOrder_Click"/>
+                    <Button Style="{DynamicResource BlueButtonStyle}" Content="Add to Order" Margin="0,0,0,5" TabIndex="1" Foreground="#FFFFFFFF" IsDefault="True" Grid.Row="1" Height="27" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Width="80" FontFamily="Arial" FontSize="10" x:Name="btnAddToOrder" Click="btnAddToOrder_Click" />
+                   
                 </Grid>
             </Border>
             <Button Grid.Column="1" FontFamily="Arial" FontSize="16" Width="12" Height="50" Content="&lt;" x:Name="btnHide"/>
@@ -205,12 +210,12 @@
                             </GridView>
                         </Restaurant:SortableListView.View>
                     </Restaurant:SortableListView>
-                    <Button Style="{DynamicResource BlueButtonStyle}" Content="Remove" Margin="0,0,0,5" Foreground="#FFFFFFFF" IsDefault="False" Grid.Row="1" Height="27" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Width="80" FontFamily="Arial" FontSize="10" x:Name="btnRemoveItem" Click="btnRemoveItem_Click"/>
+                    <Button Style="{DynamicResource BlueButtonStyle}" Content="Remove" Margin="0,0,0,5" TabIndex="4" Foreground="#FFFFFFFF" IsDefault="False" Grid.Row="1" Height="27" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Width="80" FontFamily="Arial" FontSize="10" x:Name="btnRemoveItem" Click="btnRemoveItem_Click"/>
                 </Grid>
             </Border>
         </Grid>
-        <Button Style="{DynamicResource BlueButtonStyle}" Content="Cancel" Margin="0,0,-110,35" VerticalAlignment="Bottom" Height="27" Width="100" Foreground="#FFFFFFFF" HorizontalAlignment="Center" IsCancel="True" FontFamily="Arial" FontSize="11" x:Name="btnCancel"/>
-        <Button Style="{DynamicResource BlueButtonStyle}" Content="Save" Margin="0,0,110,35" VerticalAlignment="Bottom" Height="27" Foreground="#FFFFFFFF" HorizontalAlignment="Center" Width="100" IsDefault="False" FontFamily="Arial" FontSize="11" x:Name="btnSaveOrder" Click="btnSaveOrder_Click"/>
+        <Button Style="{DynamicResource BlueButtonStyle}" Content="Cancel" Margin="0,0,-110,35" VerticalAlignment="Bottom" TabIndex="3" Height="27" Width="100" Foreground="#FFFFFFFF" HorizontalAlignment="Center" IsCancel="True" FontFamily="Arial" FontSize="11" x:Name="btnCancel"/>
+        <Button Style="{DynamicResource BlueButtonStyle}" Content="Save" Margin="0,0,110,35" TabIndex="2" VerticalAlignment="Bottom" Height="27" Foreground="#FFFFFFFF" HorizontalAlignment="Center" Width="100" IsDefault="False" FontFamily="Arial" FontSize="11" x:Name="btnSaveOrder" Click="btnSaveOrder_Click"/>
         <Popup Width="220" Height="50" x:Name="PopUpSelectTable" PlacementTarget="{Binding ElementName=borderTableNo}" OpacityMask="{x:Null}" PopupAnimation="Slide" AllowsTransparency="True" Placement="Bottom" Margin="0,0,0,0" VerticalOffset="-45" MouseLeave="PopUpSelectTable_MouseLeave" HorizontalOffset="-30">
             <Border Width="220" Height="50" Margin="0,0,0,0" CornerRadius="8,8,8,8" BorderThickness="1,1,1,1" BorderBrush="#9EB5B5B5" Background="#E5202020">
                 <Grid>

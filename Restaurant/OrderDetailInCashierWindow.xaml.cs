@@ -287,7 +287,7 @@ namespace Restaurant
                         {
                             totalPriceStr = totalPriceStr.Split('.')[0];
                         }
-                        txbTotalPrice.Text = totalPriceStr + " $";
+                        txbTotalPrice.Text = totalPriceStr + " .Rs";
                         expanderCheckOut.IsExpanded = true;
                     }
                     string locker = LockOrder(currentOrderNo, GlobalClass._UserID);

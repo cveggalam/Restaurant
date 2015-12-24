@@ -83,7 +83,7 @@
                     <Restaurant:SortListViewColumn Header="Table No" CellTemplate="{StaticResource TableNoColumnTemplate}"  Width="100" SortProperty="TableNo" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
                     <Restaurant:SortListViewColumn Header="Waiter Name" CellTemplate="{StaticResource CustomerNameColumnTemplate}" Width="200" SortProperty="CustomerName" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
                     <Restaurant:SortListViewColumn Header="Date" CellTemplate="{StaticResource DateColumnTemplate}"  Width="150" SortProperty="CreationDatetime" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
-                    <Restaurant:SortListViewColumn Header="Order Price($)" CellTemplate="{StaticResource OrderPriceColumnTemplate}" Width="100" SortProperty="TotalPrice" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
+                    <Restaurant:SortListViewColumn Header="Order Price(.Rs)" CellTemplate="{StaticResource OrderPriceColumnTemplate}" Width="100" SortProperty="TotalPrice" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
                     <GridViewColumn Width="4" HeaderContainerStyle="{DynamicResource LastColumnGridViewColumnHeader}" CellTemplate="{StaticResource EmptyColumnTemplate}"/>
                 </GridView>
             </Restaurant:SortableListView.View>

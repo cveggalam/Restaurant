@@ -68,14 +68,17 @@ namespace Restaurant
                     string encrypt_password = GlobalClass.GetMd5Hash(password);
                     CheckUser(userName, encrypt_password);
                 }
-                catch { }
-                    
+                catch
+                {
+                    MessageBox.Show("Select any item");
+                }
+
             }
             else
             {
                 MessageBox.Show(errorText, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            this.Cursor = Cursors.Arrow;
+            //  this.Cursor = Cursors.Arrow;
         }
 
         private void CheckUser(string userName, string password)
@@ -172,9 +175,10 @@ namespace Restaurant
                 catch (Exception ex)
                 {
                     MessageBox.Show(ErrorMessages.Default.UnhandledException,"Error",MessageBoxButton.OK, MessageBoxImage.Error);
+                    
                 }
             }
-            this.Cursor = Cursors.Arrow;
+              this.Cursor = Cursors.Arrow;
         }
     }
 }

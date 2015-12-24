@@ -1,0 +1,15 @@
+USE [Restaurant]
+GO
+/****** Object:  StoredProcedure [dbo].[Get_All_Products]    Script Date: 11/20/2015 15:59:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+Create PROCEDURE [dbo].[Get_Product_By_ProductCode] 1
+@ProductCode int
+ AS
+	SELECT     Products.ProductID, Products.ProductCode, Products.ProductName, Products.UnitName,Products.GroupID, Groups.GroupName, Products.Price
+FROM         Products INNER JOIN
+                      Groups ON Products.GroupID = Groups.GroupID 
+                      where ProductCode=@ProductCode
+ORDER BY Products.ProductName

@@ -114,14 +114,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Restaurant.exe" size="1395200">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Restaurant.exe" size="1397760">
       <assemblyIdentity name="Restaurant" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>DVx2bD+NSkrYQQYfeb5DgVI0yVM=</dsig:DigestValue>
+        <dsig:DigestValue>vMfnYMWuuoxPpcV5JX6+UN2HBEA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -164,13 +164,13 @@
       <dsig:DigestValue>S/jdzduZdx9EQfN0fSFqq602POA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Restaurant.exe.config" size="8570">
+  <file name="Restaurant.exe.config" size="7612">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>AbcEoDJeDAceA1Yx4IHkoUPlFdw=</dsig:DigestValue>
+      <dsig:DigestValue>kUcy22MHlYZmBroNG5Sd49jd+eU=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Restaurant.ico" size="432254">

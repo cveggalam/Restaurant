@@ -102,7 +102,7 @@
         <Border Height="50" DockPanel.Dock="Top" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="0,0,0,1" x:Name="HeaderBorder" Padding="10,0,10,0" >
             <DockPanel x:Name="Header" >
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock xml:space="preserve" Opacity="1" FontFamily="Segoe" FontSize="24" FontStretch="Normal" FontWeight="Light" TextWrapping="Wrap" Foreground="{DynamicResource HeaderFontColor}" VerticalAlignment="Bottom" Margin="0,0,0,5"><Run Foreground="#FFCFD3DA" Text="Restaurant"/></TextBlock>
+                    <TextBlock xml:space="preserve" Opacity="1" FontFamily="Segoe" FontSize="24" FontStretch="Normal" FontWeight="Light" TextWrapping="Wrap" Foreground="{DynamicResource HeaderFontColor}" VerticalAlignment="Bottom" Margin="0,0,0,5"><Run Foreground="#FFCFD3DA" Text="Hotel Spicy Inn " FontStyle="Italic" /></TextBlock>
                     <Grid>
                         <Ellipse Margin="10,2,0,0" Width="44" Height="44" Stroke="{x:Null}"  Opacity="1" x:Name="yellowcircle">
                             <Ellipse.Fill>

@@ -331,7 +331,7 @@
                 <Border x:Name="ExpanderContent" Height="140" BorderBrush="#66FFFFFF" BorderThickness="1,1,1,1" Width="Auto" Margin="1,0,1,0" CornerRadius="5,5,5,5">
             		<Grid Background="{x:Null}" Height="Auto">
             			<TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Text="Total Price:" TextWrapping="Wrap" Foreground="#FFFFFFFF" Width="Auto" FontSize="14" FontFamily="Arial" Margin="4,17,0,0"/>
-            			<TextBlock Margin="79,11,0,0" Text="0 $" TextWrapping="Wrap" Foreground="#FFFFAA00" FontFamily="Arial" FontSize="24" VerticalAlignment="Top" HorizontalAlignment="Stretch" x:Name="txbTotalPrice"/>
+            			<TextBlock Margin="79,11,0,0" Text="0 .Rs" TextWrapping="Wrap" Foreground="#FFFFAA00" FontFamily="Arial" FontSize="24" VerticalAlignment="Top" HorizontalAlignment="Stretch" x:Name="txbTotalPrice"/>
             			<TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Text="Waiter:" TextWrapping="Wrap" Foreground="#FFFFFFFF" Width="Auto" FontFamily="Arial" FontSize="14" Margin="4,47,0,0"/>
             			<TextBox Margin="6,20,6,0" Height="Auto" Text="" TextWrapping="Wrap" HorizontalAlignment="Stretch" d:LayoutOverrides="Height" VerticalAlignment="Center" FontSize="14" Name="txbCustomerName" MaxLength="50" />
             			<Button HorizontalAlignment="Center" Style="{DynamicResource BlueButtonStyle}" VerticalAlignment="Bottom" Width="120" Height="27" Content="Check Out" Foreground="#FFFFFFFF" FontSize="12" Margin="0,0,0,8" Name="btnCheckOut" Click="btnCheckOut_Click" />
